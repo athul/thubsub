@@ -3,6 +3,6 @@ int main()
 {
   char phrase[100];
   fgets(phrase, sizeof(phrase), stdin);
-  printf("%s", abbreviat(phrase));
+  printf("%s", abbreviate(phrase));
   return(0);
 }
