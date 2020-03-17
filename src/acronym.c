@@ -1,4 +1,4 @@
-// #include "acronym.h"
+#include "acronym.h"
 #include<string.h>
 #include<stdio.h>
 int main()
