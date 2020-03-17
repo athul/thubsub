@@ -2,7 +2,7 @@
 #include "../src/acronym.h"
 #include <stdlib.h>
 #include <string.h>
-
+#include<stdio.h>
 void setUp(void)
 {
 }
@@ -99,6 +99,26 @@ static void test_long_abbreviation(void)
    test_abbreviation(phrase, expected);
 }
 
+static void actual_test(void)
+{
+char str1[200],str2[20];
+int i,k=1;
+printf("\nEnter the input sentence or sequence of words:\n");
+gets(str1);
+str2[0]=toupper(str1[0]);
+for(i=1;i<strlen(str1);i++)
+	{
+	if(str1[i]==' ')
+		{
+		str2[k]==toupper(str1[i+1]);
+		k++;
+		}
+	}
+printf("\n ACRONYM:");
+for(i=0;i<k;i++)
+	printf("%c",str2[i]);
+}
+
 int main(void)
 {
    UnityBegin("test/test_acronym.c");
@@ -113,5 +133,6 @@ int main(void)
    RUN_TEST(test_empty_string);
    RUN_TEST(test_all_words_starting_with_lowercase);
    RUN_TEST(test_long_abbreviation);
+   RUN_TEST(actual_test);
    return UnityEnd();
 }
