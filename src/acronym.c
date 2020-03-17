@@ -1,27 +1,29 @@
 #include "acronym.h"
-//Acroncym
-
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
-void main()
+char *abbreviate(const char *phrase) 
 {
- int k=1,i;
- char st[100],st2[10];
- printf("\n enter the string: ");
- gets(st);
- st2[0]= toupper(st[0]);
-for(i=1;i<strlen(st);i++)
-{
-  if(st[i]==' ')
-    {
-        st2[k]=toupper(st[i+1]);
-        k++;
-}
-}
-printf("\n The acronym is :");
-for(i=0;i<k;i++)
- printf("%c",st2[i]);
-getch();
+	if((phrase == NULL) || phrase[0] == '\0') return NULL;
+
+    int len = 0;
+    int j=0;
+    len = strlen(phrase);
+
+	char *abrv;
+	abrv = (char *)malloc(sizeof(char)*len);
+
+	len = strlen(phrase);
+	abrv[j] = toupper(phrase[0]);
+	for(int i=0; i<len; i++){
+		if((phrase[i] == ' ') || phrase[i] == '-'){
+
+            if(i+1<len && !(phrase[i+1] == ' ') && !(phrase[i+1] == '-')){
+                j++;
+                abrv[j] = toupper(phrase[i+1]);
+            }
+		}
+	}
+	return abrv;
 }
