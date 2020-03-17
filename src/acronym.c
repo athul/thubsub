@@ -15,7 +15,7 @@ char *abbreviate(const char *phrase)
        accr = (char *)malloc(sizeof(char)*strlen(phrase));
        accr[j] = toupper(phrase[0]);
        j++;
-       for(i=1;i<strlen(phrase)-1;i++)
+       for(i=1;(unsigned)i<strlen(phrase);i++)
           if(((phrase[i]==' ')||(phrase[i]=='-'))&&(phrase[i+1]!=' ')&&(phrase[i+1]!='\0'))
             {
                accr[j] = toupper(phrase[i+1]);
