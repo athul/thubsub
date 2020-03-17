@@ -18,9 +18,11 @@ char *abbreviate(const char *phrase) {
 	acr[j] = toupper(phrase[0]);
 	for(int i=0; i<len; i++){
 		if((phrase[i] == ' ') || phrase[i] == '-'){
-			j++;
-            if(i+1<len && !(phrase[i+1] == ' ') && !(phrase[i+1] == '-'))
-			acr[j] = toupper(phrase[i+1]);
+			
+            if(i+1<len && !(phrase[i+1] == ' ') && !(phrase[i+1] == '-')){
+                j++;
+                acr[j] = toupper(phrase[i+1]);
+            }
 		}
 	}
 	return acr;
