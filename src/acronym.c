@@ -14,7 +14,7 @@ char *abbreviate(const char *phrase) {
 	len = strlen(phrase);
 	abbr[j] = toupper(phrase[0]);
 	for(int i=0; i<len; i++){
-		if(phrase[i] == ' '){
+		if((phrase[i] == ' ') || phrase[i] == '-'){
 			j++;
 			abbr[j] = toupper(phrase[i+1]);
 		}
