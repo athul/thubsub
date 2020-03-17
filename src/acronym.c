@@ -4,7 +4,7 @@ int main()
     int i,j;
     char name[100],acr[10];
 	printf("\nEnter The long name\n");
-	scanf("%[^\n]",&name);
+	scanf("%[^\n]",name);
 	acr[0]=name[0];
 	j=1;
 	for(i=1;name[i+1]!='\0';++i)
