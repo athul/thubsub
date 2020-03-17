@@ -4,3 +4,4 @@
 char *abbreviate(const char *phrase);
 
 #endif
+
