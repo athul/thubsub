@@ -8,7 +8,7 @@ int main()
     int j=1,i;
     char word[100],acro[20];
     printf("Enter The Contents\n");
-    gets(word);
+    fgets(word, sizeof(word), stdin);
     acro[0]=toupper(word[0]);
     for(i=1;i<strlen(word);i++)
     {
