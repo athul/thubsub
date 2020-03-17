@@ -4,7 +4,7 @@
 #include<string.h>
 #include "acronym.h"
 
-char *abbreviate(char *phrase){
+char *abbreviate(const char *phrase){
     if(!phrase) return NULL;
     if(!strcmp(phrase,"")) return NULL;
     char *res;
