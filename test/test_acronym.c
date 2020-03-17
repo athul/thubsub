@@ -15,12 +15,12 @@ static void test_abbreviation(char *phrase, char *expected)
 {
    char *actual = abbreviate(phrase);
    TEST_ASSERT_EQUAL_STRING(expected, actual);
-   free(actual);
+   free(actual); 
 }
 
 static void test_null_string(void)
 {
-   TEST_IGNORE();               // delete this line to run test
+   // TEST_IGNORE();               // delete this line to run test
    char *phrase = NULL;
    char *expected = NULL;
    test_abbreviation(phrase, expected);
@@ -92,7 +92,7 @@ static void test_all_words_starting_with_lowercase(void)
 
 static void test_long_abbreviation(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    char *phrase = "Rolling On The Floor Laughing So Hard "
        "That My Dogs Came Over And Licked Me";
    char *expected = "ROTFLSHTMDCOALM";

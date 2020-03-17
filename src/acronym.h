@@ -1,1 +1,2 @@
-#include "acronym.h"
+// #include "acronym.h"
+char *abbreviate(char *phrase);
