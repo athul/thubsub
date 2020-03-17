@@ -1,6 +1,8 @@
 #ifndef ACRONYM_H
 #define ACRONYM_H
 
+#include "ctype.h"
+
 
 char *abbreviate(const char* phrase);
 
