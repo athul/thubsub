@@ -1,24 +1,30 @@
 #include "acronym.h"
+#include<stdlib.h>
 #include<string.h>
-#include<stdio.h>
-int main()
-{
-int k=1,i;
-char st[100],st2[10];
+#include<ctype.h>
 
-printf("\n\nEnter The String : ");
-fgets(st, sizeof(st), stdin);
+char *abbreviate(const char *phrase){
+	
+	if(phrase!=NULL && phrase[0]!='\0'){
+	
+	
+	char *tlp = (char *)malloc(sizeof(char)*50);
+	int j=1;
+	
+	*tlp=toupper(phrase[0]);
+	for (++phrase; *phrase; phrase++) {
 
-st2[0]=st[0];
-for(i=1;i<strlen(st);i++)
-    if(st[i]==' ')
-    {
-    
-    st[k]=st[i+1];
-    k++;
-    }
-printf("\n\nThe ACRONYM Is : ");
-for(i=0;i<k;i++)
-    printf("%c",st2[i]);
- return 0;
-}
+		if(*phrase==' '||*phrase=='-'){
+			phrase++;
+			*(tlp+j)=toupper(*phrase);
+			j++;
+		}
+	}
+	
+	*(tlp+j)='\0';
+	return tlp;
+	}else{
+		return NULL;
+	}
+   }
+	
