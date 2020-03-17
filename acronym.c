@@ -1,4 +1,4 @@
-#include "acronym.h" 
+
 #ifndef ACRONYM_H
 #define ACRONYM_H
 
@@ -10,6 +10,7 @@ int main()
 {
     char str[100];
     const char s[2] = " ";
+    char *abbreviate(const char *phase);
     char *token;
     printf("enter the phrase which does not contain more than 100 characters\n");
     fgets(str, sizeof(str), stdin);
@@ -23,4 +24,5 @@ int main()
         token= strtok(NULL,s);
         
     }
+    #endif
 }
