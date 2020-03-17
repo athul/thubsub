@@ -1,3 +1,8 @@
+#include "acronym.h" 
+#ifndef ACRONYM_H
+#define ACRONYM_H
+
+
 #include <stdio.h>
 #include <string.h>
 
