@@ -18,7 +18,7 @@ void main()
 
     while( token!=NULL)
     {
-        printf("|%0.1s|",token);
+        printf("%0.1s",token);
 
         token= strtok(NULL,s);
 
