@@ -5,17 +5,18 @@
 int main()
 {
 
-    int j=1,i;
+    int j=1,i,k;
     char word[100],acro[20];
     printf("Enter The Contents\n");
     fgets(word, sizeof(word), stdin);
     acro[0]=toupper(word[0]);
-    for(i=1;i<strlen(word);i++)
+    k=strlen(word);
+    for(i=1;i<k;i++)
     {
         if(word[i]==' ')
         {
 
-            acro[j]=toupper(word[i+1]);+
+            acro[j]=toupper(word[i+1]);
             j++;
 
         }
