@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void main()
+int main()
 {
     char str[100];
     const char s[2] = " ";
@@ -24,5 +24,7 @@ void main()
 
     }
     #endif
+    return 0;
+    
     
 }
