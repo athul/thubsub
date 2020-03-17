@@ -1,7 +1,7 @@
-#include "acronym.h"
+
 #include <stdio.h>
 #include <string.h>
-#include <conio.h>
+
 void main()
 {
 
@@ -22,5 +22,5 @@ void main()
     }
 acro[j]='\0';
     printf("The Acronym of %s is %s",word,acro);
-getch();
+
 }
