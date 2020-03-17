@@ -5,9 +5,8 @@
 #include <ctype.h>
 
 char *abbreviate(const char *phrase) {
-	if(phrase == NULL) {
+	if((phrase == NULL) || phrase[0] == '\0')
 		return NULL;
-	}
 	char *abbr;
 	abbr = (char *)malloc(sizeof(char)*100);
 	int len = 0, j=0;
