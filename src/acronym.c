@@ -9,7 +9,7 @@ char *abbreviate(const char *phrase){
     if(!strcmp(phrase,"")) return NULL;
     char *res;
     res = (char *)malloc(sizeof(char)*100);
-    int k;
+    int k=0;
     unsigned i;
     i=0;
     while(i<strlen(phrase)){
