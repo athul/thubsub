@@ -4,6 +4,9 @@
 #include <string.h>
 
 char *abbreviate(const char *phrase) {
+	if(phrase == NULL) {
+		return NULL;
+	}
 	char *abbr;
 	abbr = (char *)malloc(sizeof(char)*100);
 	int len = 0, j=0;
