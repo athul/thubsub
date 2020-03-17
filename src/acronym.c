@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-int main()
+int main(void)
 {
 
     int j=1,i,k;
