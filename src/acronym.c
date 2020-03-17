@@ -1,26 +1,29 @@
 #include "acronym.h"
-#include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include <ctype.h>
 
-char *abbreviate(const char *phrase)
-{
- char *acronym=NULL;
- const char *delim = " -_";
- int i = 0;
- char *next = NULL;
+char *abbreviate(const char *phrase) {
+	if((phrase == NULL) || phrase[0] == '\0')
+		return NULL;
 
- if((phrase)&&(*phrase!='\0'))
- {
-   char phrasein[MAX_SIZE];
-   acronym = (char *)malloc(sizeof(char) * MAX_SIZE);
-   strncpy(phrasein, phrase, MAX_SIZE);
-   next = strtok(phrasein, delim);
-   while(next != NULL)
-    {
-      acronym[i++] = toupper(*next);
-      next = strtok(NULL, delim);
-    }
- }
- return acronym;
+    int len = 0, j=0;
+    len = strlen(phrase);
+
+	char *acr;
+	acr = (char *)malloc(sizeof(char)*len);
+
+	len = strlen(phrase);
+	acr[j] = toupper(phrase[0]);
+	for(int i=0; i<len; i++){
+		if((phrase[i] == ' ') || phrase[i] == '-'){
+			
+            if(i+1<len && !(phrase[i+1] == ' ') && !(phrase[i+1] == '-')){
+                j++;
+                acr[j] = toupper(phrase[i+1]);
+            }
+		}
+	}
+	return acr;
 }
