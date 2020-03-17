@@ -13,5 +13,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+    - name: Clean Test Files if Any
+      run: make clean
     - name: Test The Code
       run: make
