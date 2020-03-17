@@ -4,7 +4,7 @@
 #include "ctype.h"
 
 
-char *abbreviate(const char* phrase);
+
 
 char *abbreviate(const char* phrase)
 {
