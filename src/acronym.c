@@ -10,7 +10,10 @@ char st[100],st2[10];
 printf("\n\nEnter The String : ");
 scanf("%[^\n]", st);
 st2[0] = st[0];
-for(i=1;i<strlen(st);i++)
+int length;
+length = strlen(st);
+
+for(i=1;i < length;i++)
 {
     if(st[i]==' ')
     {
