@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 #include <string.h>
-void main()
+int main()
 {
 int k=1,i;
 char st[100],st2[10];
