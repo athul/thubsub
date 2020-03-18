@@ -1,27 +1,25 @@
+#define _POSIX_C_SOURCE 200809L
 #include "acronym.h"
-
-#include <stdio.h>
-
+#include <stdlib.h>
 #include <string.h>
-int main()
-{
-int k=1,i;
-char st[100],st2[10];
-printf("\n\nEnter The String : ");
-scanf("%[^\n]", st);
-st2[0] = st[0];
-int length;
-length = strlen(st);
+#include <ctype.h>
 
-for(i=1;i < length;i++)
-{
-    if(st[i]==' ')
-    {
-    st2[k]= st[i+1];
-    k++;
+char *abbreviate(const char *phrase) {
+	if((phrase == NULL) || phrase[0] == '\0') return NULL;
+	const char  *delim = " \t\n,.!-";
+    char *p;
+	char* text = strdup(phrase);
+	p = strtok (text, delim);
+	char *acronym;
+	int len = strlen(phrase);
+    acronym = (char *)malloc(sizeof(char)*len);    
+	while (p != NULL) {     
+        strncat(acronym,&p[0],1);
+        p = strtok (NULL, delim);  
     }
-}
-printf("\n\nThe ACRONYM Is : ");
-for(i=0;i<k;i++)
-    printf("%c",st2[i]);
+    for(int i=0; acronym[i]!='\0'; i++)
+      {
+        acronym[i]=toupper(acronym[i]);
+      }
+	return acronym;
 }
